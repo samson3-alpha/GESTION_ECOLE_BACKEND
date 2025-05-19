@@ -6,8 +6,11 @@ const ClasseSchema = new mongoose.Schema({
     type: { type: String, required: true },
     serie: { type: String, required: true },
     nbEleves: { type: Number, default: 0, required: false },
-    professeurs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Professeur' }]
+    professeurs: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Professeur' }],
+    eleves: [{ type: mongoose.Schema.Types.ObjectId, ref: "Eleve" }]
 }, { timestamps: true });
 
-export default mongoose.model('Classe', ClasseSchema);
 
+ const Classe = mongoose.model('Classe', ClasseSchema);
+
+ export default Classe;
